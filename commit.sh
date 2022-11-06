@@ -1,6 +1,6 @@
 #!/bin/bash
 function commit() {
-  if [ -z "$1"]; then
+  if [ -z "$1" ]; then
     return 1
   fi
   yarn tsc&&git add .&&git commit -m $1&&git push origin master
@@ -9,7 +9,7 @@ function commit() {
 commit $1
 result="$?"
 if [ "$result" -eq 0 ]; then
-  echo "success"
+  echo "SUCCESS"
 else
-  echo "no commit message"
+  echo "ERROR | no commit message"
 fi
